@@ -1,7 +1,13 @@
 from fastapi import FastAPI
 from fastapi import HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import firebase_admin
 from firebase_admin import credentials, firestore
+
+origins = [
+    "https://your-flutterflow-app.flutterflow.app",  # Add your allowed domain here
+    # You can add more domains if needed
+]
 
 # Firebase config
 cred = credentials.Certificate("serviceAccountKey.json")
@@ -10,6 +16,14 @@ db = firestore.client()
 
 # FastAPI config
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 async def getDocument(collection, document):
     doc_ref = db.collection(collection).document(document)
