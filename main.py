@@ -5,7 +5,10 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 origins = [
-    "https://your-flutterflow-app.flutterflow.app",  # Add your allowed domain here
+    # Add your allowed domain here
+    "https://kreateapp.com",  
+    "https://www.kreateapp.com", 
+    "https://kreate.flutterflow.app", 
     # You can add more domains if needed
 ]
 
