@@ -1,1 +1,2 @@
 fastapi[all]
+firebase_admin[all]
