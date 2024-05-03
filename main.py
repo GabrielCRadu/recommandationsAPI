@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi import HTTPException
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -104,6 +105,11 @@ async def get_user_recommandations(user_id: str):
                 if following_person_id != user_id and following_person_id not in following_ids:
                     recommendations_set.add(following_person_id)
 
-        recommendations = list(recommendations_set)  
+        recommendations = list(recommendations_set)
+        
+        # Returnăm un mesaj JSON cu rezultatul
+        return {"success": True, "recommendations": recommendations}
+    
+    # Dacă utilizatorul nu există, ridicăm o excepție HTTP cu codul 404
+    raise HTTPException(status_code=404, detail="Utilizatorul nu a fost găsit")
 
-    return recommendations
