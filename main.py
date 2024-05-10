@@ -5,11 +5,10 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 origins = [
-    # Add your allowed domain here
+    #Domeniile aplicatiti trebuie adaugate aici ori cererea este refuzata
     "https://kreateapp.com",  
     "https://www.kreateapp.com", 
     "https://kreate.flutterflow.app", 
-    # You can add more domains if needed
 ]
 
 # Firebase config
@@ -128,5 +127,9 @@ async def get_user_recommandations(user_id: str):
         return {"success": True, "recommendations": recommendations}
     
     # Dacă utilizatorul nu există, ridicăm o excepție HTTP cu codul 404
-    raise HTTPException(status_code=404, detail="Utilizatorul nu a fost găsit")
+    raise HTTPException(status_code=404, detail="User was not found")
 
+@app.get("/wake")
+async def wake_server():
+    # Aici puteți adăuga orice cod pe care doriți să îl rulați când endpoint-ul este accesat
+    return {"message": "Server has woken"}
