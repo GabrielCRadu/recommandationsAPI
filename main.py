@@ -37,54 +37,7 @@ async def getDocument(collection, document):
 
 @app.get("/")
 async def index():
-    return {"Main page"}
-
-@app.get("/{userID}")
-async def index(userID: str):
-    user = getDocument("users", userID)
-    user_data = user.to_dict()
-    name = user_data['display_name']
-    return {"User data \n": user_data}
-
-
-@app.get("/following/{user_id}")
-async def get_user_following_list(user_id: str):
-    user_ref = db.collection("users").document(user_id)
-    user = user_ref.get()
-
-    if user.exists:
-        user_data = user.to_dict()
-        followers = user_data['following']
-
-        follower_ids = []
-
-        for followerRef in followers:
-            follower = followerRef.get()
-            follower_ids.append(follower.id)
-        return(follower_ids)
-    else:
-        print("No such document!")
-
-
-@app.get("/followers/{user_id}")
-async def get_user_follower_list(user_id: str):
-    user_ref = db.collection("users").document(user_id)
-    user = user_ref.get()
-
-    if user.exists:
-        user_data = user.to_dict()
-        followers = user_data['followers']
-
-        follower_ids = []
-
-        for followerRef in followers:
-            follower = followerRef.get()
-            follower_ids.append(follower.id)
-            
-        return(follower_ids)
-    else:
-        print("No such document!")
-
+    return {"Server has woken up"}
 
 @app.get("/recommend/{user_id}")
 async def get_user_recommandations(user_id: str):
@@ -128,8 +81,3 @@ async def get_user_recommandations(user_id: str):
     
     # Dacă utilizatorul nu există, ridicăm o excepție HTTP cu codul 404
     raise HTTPException(status_code=404, detail="User was not found")
-
-@app.get("/wake")
-async def wake_server():
-    # Aici puteți adăuga orice cod pe care doriți să îl rulați când endpoint-ul este accesat
-    return {"message": "Server has woken"}
