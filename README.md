@@ -15,8 +15,7 @@ Oferirea de sugestii de persoane pe care un utilizator ar putea să le urmăreas
 
 - Endpoint `GET /recommend/{user_id}`  
 - Conectare la **Firebase Firestore** pentru citirea rețelei de utilizatori  
-- Algoritm de recomandare tip „friends of friends”, cu excluderea duplicatelor  
-- Suport CORS pentru integrare în aplicații Flutter/FlutterFlow (domenii whitelisted)
+- Algoritm de recomandare tip „friends of friends”, cu excluderea duplicatelor
 
 ---
 
@@ -71,14 +70,6 @@ Returnează o listă de ID-uri ale utilizatorilor recomandați.
 - CORS activ doar pentru domeniile:
   - `https://kreateapp.com`
   - `https://www.kreateapp.com`
-  - `https://kreate.flutterflow.app`
-
----
-
-## 👨‍💻 Autor
-
-**Gabriel Radu** – radugabriel796@gmail.com  
-Parte din proiectul [KREATE](https://kreateapp.com)
 
 ---
 
