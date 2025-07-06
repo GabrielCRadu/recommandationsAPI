@@ -1,7 +1,7 @@
 
 # 👥 recommandationsAPI
 
-Un API REST simplu, scris în **FastAPI**, care generează recomandări de utilizatori pentru aplicația **KREATE** pe baza relațiilor sociale din Firebase Firestore („prieteni ai prietenilor”).
+Un API REST simplu, scris în **Python** cu ajutorul librăriei **FastAPI**, care generează recomandări de utilizatori pentru aplicația **KREATE** pe baza relațiilor sociale din Firebase Firestore („prieteni ai prietenilor”).
 
 ---
 
