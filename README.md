@@ -74,6 +74,14 @@ Returnează o listă de ID-uri ale utilizatorilor recomandați.
 ---
 
 
+## 👨‍💻 Autori
+- rest API scris de **Radu Gabriel Claudiu**
+
+  rol in cadrul aplicației KREATE:
+- **Radu Gabriel Claudiu** – backend, frontend, etc.
+- **Trîmbițaș George Bogdan** – interfață grafică, meniuri, testare  
+
+
 # Deploy FastAPI on Render
 
 Use this repo as a template to deploy a Python [FastAPI](https://fastapi.tiangolo.com) service on Render.
