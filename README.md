@@ -73,12 +73,6 @@ Returnează o listă de ID-uri ale utilizatorilor recomandați.
 
 ---
 
-## 📄 Licență
-
-MIT – vezi `LICENSE`
-
-
-
 
 # Deploy FastAPI on Render
 
